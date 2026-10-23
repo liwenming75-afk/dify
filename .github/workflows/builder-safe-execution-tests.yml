@@ -97,7 +97,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -122,7 +122,7 @@ jobs:
           assert {case.get("name") for case in cases} == expected
           assert all(case.find(tag) is None for case in cases for tag in ("skipped", "failure", "error"))
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-migration-dialects
@@ -139,7 +139,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -339,7 +339,7 @@ jobs:
               print(f"COMPLETENESS {problem}", flush=True)
           raise SystemExit(int(code) or (1 if problems else 0))
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-safe-execution-native-postgres
@@ -354,7 +354,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2024,7 +2024,7 @@ jobs:
               print(f"COMPLETENESS {problem}", flush=True)
           raise SystemExit(int(code) or (1 if problems else 0))
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-confirmed-tool-units
@@ -2043,7 +2043,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2127,7 +2127,7 @@ jobs:
               raise SystemExit(int(code) or (1 if problems else 0))
           PY
           uv run --project api --no-sync python -u "$RUNNER_TEMP/builder_native_continuation_runner.py" 2>&1 | tee builder-native-continuation.log
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-native-continuation
@@ -2146,7 +2146,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2196,7 +2196,7 @@ jobs:
               raise SystemExit(int(code) or (1 if problems else 0))
           PY
           uv run --project api --no-sync python -u "$RUNNER_TEMP/builder_native_dispatch_runner.py" 2>&1 | tee builder-native-dispatch.log
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-native-dispatch
@@ -2215,7 +2215,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2269,7 +2269,7 @@ jobs:
               raise SystemExit(int(code) or (1 if problems else 0))
           PY
           uv run --project api --no-sync python -u "$RUNNER_TEMP/builder_native_console_runner.py" 2>&1 | tee builder-native-console.log
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-native-console
@@ -2288,7 +2288,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2337,7 +2337,7 @@ jobs:
               print(f"COMPLETENESS {problem}", flush=True)
           raise SystemExit(int(code) or (1 if problems else 0))
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-native-agent-binding
@@ -2364,7 +2364,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2634,7 +2634,7 @@ jobs:
               print(f"COMPLETENESS {problem}", flush=True)
           raise SystemExit(int(code) or (1 if problems else 0))
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-native-agent
@@ -2653,7 +2653,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2685,7 +2685,7 @@ jobs:
         run: |
           set -o pipefail
           vp test run --project unit app/components/workflow-app/components/dify-builder 2>&1 | tee ../builder-api-contracts/builder-consumer-tests.log
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-api-contracts
@@ -2703,7 +2703,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           python-version: '3.13'
           enable-cache: true
@@ -2966,7 +2966,7 @@ jobs:
               print(f"COMPLETENESS {problem}", flush=True)
           raise SystemExit(int(code) or bool(problems))
           PY
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: builder-native-foundation
